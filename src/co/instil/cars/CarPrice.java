@@ -12,6 +12,19 @@ public class CarPrice {
     private CarPrice() {
     }
 
+    public static CarPrice buildFrom(String priceLine) {
+        CarPrice carPrice = new CarPrice();
+        String[] priceLineBits = priceLine.split(",");
+        carPrice.setModel(priceLineBits[0]);
+        carPrice.setManufacturer(priceLineBits[1]);
+        carPrice.setEngine(priceLineBits[2]);
+        carPrice.setFuel(priceLineBits[3]);
+        carPrice.setYear(priceLineBits[4]);
+        carPrice.setWarranty(priceLineBits[5].equals("Yes"));
+        carPrice.setPrice(Double.parseDouble(priceLineBits[6]));
+        return carPrice;
+    }
+
     public String getModel() {
         return model;
     }
@@ -52,7 +65,7 @@ public class CarPrice {
         this.year = year;
     }
 
-    public boolean isWarranty() {
+    public boolean hasWarranty() {
         return warranty;
     }
 
@@ -68,16 +81,14 @@ public class CarPrice {
         this.price = price;
     }
 
-    public static CarPrice buildFrom(String priceLine) {
-        CarPrice carPrice = new CarPrice();
-        String[] priceLineBits = priceLine.split(",");
-        carPrice.setModel(priceLineBits[0]);
-        carPrice.setManufacturer(priceLineBits[1]);
-        carPrice.setEngine(priceLineBits[2]);
-        carPrice.setFuel(priceLineBits[3]);
-        carPrice.setYear(priceLineBits[4]);
-        carPrice.setWarranty(priceLineBits[5] == "Yes");
-        carPrice.setPrice(Double.parseDouble(priceLineBits[6]));
-        return carPrice;
+    @Override
+    public String toString() {
+        return getModel() + "," +
+                getManufacturer() + "," +
+                getEngine() + "," +
+                getFuel() + "," +
+                getYear() + "," +
+                ((hasWarranty()) ? "Yes" : "No") + "," +
+                Double.toString(getPrice());
     }
 }

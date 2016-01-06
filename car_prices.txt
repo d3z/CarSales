@@ -6,8 +6,11 @@ Scenic,Renault,1.9,Diesel,2005,No,300
 Sandero,Dacia,1.5,Diesel,2013,Yes,5985
 500,Fiat,1.2,Petrol,2014,Yes,7495
 Punto,Fiat,1.2,Petrol,2002,No,790
+Passat,Volkswagen,2.0,Diesel,2015,Yes,21495
 Beetle,Volkswagen,2.0,Petrol,2000,Yes,900
 Focus,Ford,1.6,Petrol,2004,No,1000
 Fiesta,Ford,1.2,Petrol,2005,No,1095
+Scirocco,Volkswagen,1.4,2015,Yes,18995
 Accord,Honda,2.2,Diesel,2007,Yes,3500
 Astra,Vauxhall,1.8,Petrol,2008,No,3650
+Touareg,Volkswagen,3.0,Diesel,2013,Yes,31995
